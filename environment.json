@@ -1,0 +1,7 @@
+{
+    "network": {
+        "rpc": "https://eth-rinkeby.alchemyapi.io/v2/p8qS1KD5dUL7OurgwqEMkXzHL9qiQj7i",
+        "chain_id": 4
+    },
+    "wallet_mnemonic_path": "./mnemonic.txt"
+}
