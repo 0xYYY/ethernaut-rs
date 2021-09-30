@@ -25,11 +25,11 @@ SUBCOMMANDS:
 ```
 
 ## TODO
-- [] Get level info from Ethernaut [repo](https://github.com/OpenZeppelin/ethernaut) instead of
+- [ ] Get level info from Ethernaut [repo](https://github.com/OpenZeppelin/ethernaut) instead of
 copying from website.
-- [] Add testing with dapptools-rs and subcommand `test`.
-- [] Finish solutions.
-- [] Cleanup code.
+- [ ] Add testing with dapptools-rs and subcommand `test`.
+- [ ] Finish solutions.
+- [ ] Cleanup code.
 
 ## Related Repos
 - [`Ethernaut`](https://github.com/OpenZeppelin/ethernaut)
