@@ -25,8 +25,11 @@ fn read_levels_config<P: AsRef<Path>>(path: P) -> Result<LevelsConfig, Box<dyn E
 }
 
 fn update_levels_config(config: &mut LevelsConfig) {
-    fs::write("./levels.json", serde_json::to_string(&config).unwrap())
-        .expect("Unable to write file");
+    fs::write(
+        "./levels.json",
+        serde_json::to_string_pretty(&config).unwrap(),
+    )
+    .expect("Unable to write file");
 }
 
 fn read_environment_config<P: AsRef<Path>>(path: P) -> Result<EnvironmentConfig, Box<dyn Error>> {
@@ -93,8 +96,9 @@ async fn new(
 ) -> Result<Address, Box<dyn Error>> {
     let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
     let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str())
-        .build()?;
+        .phrase(mnemonic.as_str().trim())
+        .build()?
+        .with_chain_id(config.network.chain_id);
     let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
     let client = SignerMiddleware::new(provider, wallet);
     let client = Arc::new(client);
@@ -135,8 +139,9 @@ async fn submit(
 ) -> Result<bool, Box<dyn Error>> {
     let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
     let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str())
-        .build()?;
+        .phrase(mnemonic.as_str().trim())
+        .build()?
+        .with_chain_id(config.network.chain_id);
     let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
     let client = SignerMiddleware::new(provider, wallet);
     let client = Arc::new(client);
@@ -258,6 +263,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 }
                 "solve" => match level_index {
                     0 => solution00::solve(level, &environment_config).await?,
+                    // 1 => solution01::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
