@@ -264,6 +264,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 "solve" => match level_index {
                     0 => solution00::solve(level, &environment_config).await?,
                     1 => solution01::solve(level, &environment_config).await?,
+                    2 => solution02::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
