@@ -57,9 +57,11 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
         .legacy()
         .send()
         .await?
-        .await?
-        .unwrap();
-    println!("Solve TX: {:?}", receipt.transaction_hash.to_string());
+        .await?;
+    println!(
+        "authenticate():\n{}",
+        serde_json::to_string_pretty(&receipt)?
+    );
 
     Ok(())
 }

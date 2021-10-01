@@ -114,6 +114,11 @@ async fn new(
         .await?
         .unwrap();
 
+    println!(
+        "create_level_instance():\n{}\n",
+        serde_json::to_string_pretty(&receipt)?
+    );
+
     let event: (Address, Address) = contract
         .decode_event(
             "LevelInstanceCreatedLog",
@@ -121,11 +126,6 @@ async fn new(
             receipt.logs[0].data.clone(),
         )
         .unwrap();
-
-    println!(
-        "Level instance creation TX: {:?}",
-        receipt.transaction_hash.to_string()
-    );
 
     println!("Level instance address: {:?}", event.1);
 
@@ -157,12 +157,12 @@ async fn submit(
         .await?
         .unwrap();
 
-    let completed = receipt.logs.len() > 0;
-
     println!(
-        "Level instance submission TX: {:?}",
-        receipt.transaction_hash.to_string()
+        "submit_level_instance():\n{}\n",
+        serde_json::to_string_pretty(&receipt)?
     );
+
+    let completed = receipt.logs.len() > 0;
 
     println!("Level completed: {}", completed);
 
@@ -263,7 +263,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 }
                 "solve" => match level_index {
                     0 => solution00::solve(level, &environment_config).await?,
-                    // 1 => solution01::solve(level, &environment_config).await?,
+                    1 => solution01::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
