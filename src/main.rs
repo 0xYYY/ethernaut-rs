@@ -41,11 +41,11 @@ fn read_environment_config<P: AsRef<Path>>(path: P) -> Result<EnvironmentConfig,
 
 fn status(config: &LevelsConfig) {
     config.levels.iter().for_each(|l| {
-        print(l, false);
+        info(l, false);
     });
 }
 
-fn print(level: &Level, verbose: bool) {
+fn info(level: &Level, verbose: bool) {
     println!(
         "[{}] Level {:02}: {}",
         if level.instance.is_empty() {
@@ -196,7 +196,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
         .about("A command line tool to view, solve and submit Ethernaut challenges.")
         .subcommand(App::new("status").about("Print status of each level"))
         .subcommand(
-            App::new("print").about("Print level info").arg(
+            App::new("info").about("Print level info").arg(
                 Arg::new("LEVEL")
                     .about("level index, e.g. 13")
                     .required(true)
@@ -255,7 +255,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
             let level_index = matches.value_of("LEVEL").unwrap().parse::<usize>().unwrap();
             let level = &levels_config.levels[level_index];
             match command {
-                "print" => print(level, true),
+                "info" => info(level, true),
                 "new" => {
                     let instance_address = new(ethernaut, level, &environment_config).await?;
                     levels_config.levels[level_index].instance = format!("{:?}", instance_address);
