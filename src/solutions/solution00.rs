@@ -1,10 +1,8 @@
 use crate::types::*;
+use crate::utils;
 use ethers::prelude::*;
-use ethers_providers::{Http, Provider};
-use ethers_signers::{coins_bip39::English, MnemonicBuilder};
 use std::error::Error;
-use std::fs;
-use std::{convert::TryFrom, sync::Arc};
+use std::sync::Arc;
 
 abigen!(
     LevelContract,
@@ -23,14 +21,11 @@ abigen!(
 );
 
 pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<dyn Error>> {
-    let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
-    let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str().trim())
-        .build()?
-        .with_chain_id(config.network.chain_id);
-    let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
-    let client = SignerMiddleware::new(provider, wallet);
-    let client = Arc::new(client);
+    let client = Arc::new(utils::create_signer_middleware(
+        config.wallet_mnemonic_path.clone(),
+        config.network.chain_id,
+        config.network.rpc.clone(),
+    )?);
 
     let contract = LevelContract::new(level.instance.parse::<Address>()?, client.clone());
 

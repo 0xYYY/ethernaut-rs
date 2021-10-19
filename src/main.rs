@@ -1,20 +1,19 @@
 mod solutions;
 mod types;
+mod utils;
 use crate::solutions::*;
 use crate::types::*;
 
 use clap::{App, Arg};
 use ethers::prelude::*;
 use ethers_core::types::Address;
-use ethers_providers::{Http, Provider};
-use ethers_signers::{coins_bip39::English, MnemonicBuilder};
 use serde_json;
 use std::error::Error;
 use std::fs;
 use std::fs::File;
 use std::io::BufReader;
 use std::path::Path;
-use std::{convert::TryFrom, sync::Arc};
+use std::sync::Arc;
 
 fn read_levels_config<P: AsRef<Path>>(path: P) -> Result<LevelsConfig, Box<dyn Error>> {
     let file = File::open(path)?;
@@ -72,36 +71,16 @@ abigen!(
     event_derives(serde::Deserialize, serde::Serialize)
 );
 
-/* fn create_ethernaut_contract(
-    ethernaut: &Ethernaut,
-    config: &EnvironmentConfig,
-) -> Result<Contract<dyn Middleware<>>, Box<dyn Error>> {
-    let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
-    let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str())
-        .build()?;
-    let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
-    let client = SignerMiddleware::new(provider, wallet);
-    let client = Arc::new(client);
-
-    let contract_address: Address = ethernaut.address.parse()?;
-    let contract = EthernautContract::new(contract_address, client.clone());
-    Ok(contract)
-} */
-
 async fn new(
     ethernaut: &Ethernaut,
     level: &Level,
     config: &EnvironmentConfig,
 ) -> Result<Address, Box<dyn Error>> {
-    let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
-    let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str().trim())
-        .build()?
-        .with_chain_id(config.network.chain_id);
-    let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
-    let client = SignerMiddleware::new(provider, wallet);
-    let client = Arc::new(client);
+    let client = Arc::new(utils::create_signer_middleware(
+        config.wallet_mnemonic_path.clone(),
+        config.network.chain_id,
+        config.network.rpc.clone(),
+    )?);
 
     let contract_address: Address = ethernaut.address.parse()?;
     let contract = EthernautContract::new(contract_address, client.clone());
@@ -137,14 +116,11 @@ async fn submit(
     level: &Level,
     config: &EnvironmentConfig,
 ) -> Result<bool, Box<dyn Error>> {
-    let mnemonic = fs::read_to_string(&config.wallet_mnemonic_path)?;
-    let wallet = MnemonicBuilder::<English>::default()
-        .phrase(mnemonic.as_str().trim())
-        .build()?
-        .with_chain_id(config.network.chain_id);
-    let provider = Provider::<Http>::try_from(config.network.rpc.clone())?;
-    let client = SignerMiddleware::new(provider, wallet);
-    let client = Arc::new(client);
+    let client = Arc::new(utils::create_signer_middleware(
+        config.wallet_mnemonic_path.clone(),
+        config.network.chain_id,
+        config.network.rpc.clone(),
+    )?);
 
     let contract_address: Address = ethernaut.address.parse()?;
     let contract = EthernautContract::new(contract_address, client.clone());
