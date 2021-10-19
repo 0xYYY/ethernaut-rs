@@ -1,4 +1,4 @@
-# Ethernaut-rs
+# Ethernaut-rs [WIP]
 [Ethernaut](https://ethernaut.openzeppelin.com/) solution in Rust. With command line interface to
 interact with the game.
 
