@@ -14,6 +14,7 @@ ethers-signers = "0.5.3"
 ethers-providers = "0.5.3"
 ethers-middleware = "0.5.3"
 tokio = { version = "1", features = ["full"] }
+hex = "0.4.3"
 # ethers = { git = "https://github.com/gakonst/ethers-rs", branch = "master" }
 # ethers-core = { git = "https://github.com/gakonst/ethers-rs", branch = "master" }
 # ethers-contract  = { git = "https://github.com/gakonst/ethers-rs", branch = "master" }

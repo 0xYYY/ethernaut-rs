@@ -641,6 +641,7 @@ dependencies = [
  "ethers-middleware",
  "ethers-providers",
  "ethers-signers",
+ "hex",
  "serde",
  "serde_json",
  "tokio",
