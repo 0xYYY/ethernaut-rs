@@ -67,7 +67,11 @@ fn info(level: &Level, verbose: bool) {
 
 abigen!(
     EthernautContract,
-    "contracts/build/Ethernaut.abi",
+    r#"[
+        event LevelInstanceCreatedLog(address indexed, address)
+        function createLevelInstance(address) public payable
+        function submitLevelInstance(address payable) public
+    ]"#,
     event_derives(serde::Deserialize, serde::Serialize)
 );
 
@@ -235,12 +239,16 @@ async fn main() -> Result<(), Box<dyn Error>> {
                 "new" => {
                     let instance_address = new(ethernaut, level, &environment_config).await?;
                     levels_config.levels[level_index].instance = format!("{:?}", instance_address);
+                    levels_config.levels[level_index].completed = false;
                     update_levels_config(&mut levels_config);
                 }
                 "solve" => match level_index {
                     0 => solution00::solve(level, &environment_config).await?,
                     1 => solution01::solve(level, &environment_config).await?,
                     2 => solution02::solve(level, &environment_config).await?,
+                    3 => solution03::solve(level, &environment_config).await?,
+                    4 => solution04::solve(level, &environment_config).await?,
+                    5 => solution05::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
