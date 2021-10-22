@@ -7,6 +7,7 @@
       "index": 0,
       "name": "Hello Ethernaut",
       "address": "0x4E73b858fD5D7A5fc1c3455061dE52a53F35d966",
+      "init_value": 0,
       "instance": "0xbc86d868f18781e90e24ddd178f46531866a72a4",
       "completed": true,
       "description": ""
@@ -15,6 +16,7 @@
       "index": 1,
       "name": "Fallback",
       "address": "0x9CB391dbcD447E645D6Cb55dE6ca23164130D008",
+      "init_value": 0,
       "instance": "0x480eac74dcc90baa34e3c39d74c7aa77a5bf2b1b",
       "completed": true,
       "description": ""
@@ -23,6 +25,7 @@
       "index": 2,
       "name": "Fallout",
       "address": "0x5732B2F88cbd19B6f01E3a96e9f0D90B917281E5",
+      "init_value": 0,
       "instance": "0xd8bc904f460fc5756335c3c183429c98d49e9a9e",
       "completed": true,
       "description": ""
@@ -31,6 +34,7 @@
       "index": 3,
       "name": "Coin Flip",
       "address": "0x4dF32584890A0026e56f7535d0f2C6486753624f",
+      "init_value": 0,
       "instance": "0xf5a3991990e6703b06f5e088b07c0f5ae6c6032c",
       "completed": true,
       "description": ""
@@ -39,6 +43,7 @@
       "index": 4,
       "name": "Telephone",
       "address": "0x0b6F6CE4BCfB70525A31454292017F640C10c768",
+      "init_value": 0,
       "instance": "0xd33fa275d57bf03f6f32f24d7055fb0694d783db",
       "completed": true,
       "description": ""
@@ -47,6 +52,7 @@
       "index": 5,
       "name": "Token",
       "address": "0x63bE8347A617476CA461649897238A31835a32CE",
+      "init_value": 0,
       "instance": "0xbaa0844ffa0675847c92b06eabcd94674a4830f3",
       "completed": true,
       "description": ""
@@ -55,6 +61,7 @@
       "index": 6,
       "name": "Delegation",
       "address": "0x9451961b7Aea1Df57bc20CC68D72f662241b5493",
+      "init_value": 0,
       "instance": "0x583c5eb8596b0130d1d6ac05ae41164358e0d371",
       "completed": true,
       "description": ""
@@ -63,6 +70,7 @@
       "index": 7,
       "name": "Force",
       "address": "0x22699e6AdD7159C3C385bf4d7e1C647ddB3a99ea",
+      "init_value": 0,
       "instance": "0x269e881e83b72a40fbb2f2e14460f4b812bd9e69",
       "completed": true,
       "description": ""
@@ -71,7 +79,8 @@
       "index": 8,
       "name": "Vault",
       "address": "0xf94b476063B6379A3c8b6C836efB8B3e10eDe188",
-      "instance": "0x27b15bff660e6e18487d749fca4ec5f928784722",
+      "init_value": 0,
+      "instance": "0x6a3ac8381bdd7eb029ae808ad13c4794d933d50e",
       "completed": true,
       "description": ""
     },
@@ -79,22 +88,25 @@
       "index": 9,
       "name": "King",
       "address": "0x5cECE66f3EB19f7Df3192Ae37C27D96D8396433D",
-      "instance": "",
-      "completed": false,
+      "init_value": 1,
+      "instance": "0xc20d4e32707013dfa5a47b1ddea8fe2d8da9a645",
+      "completed": true,
       "description": ""
     },
     {
       "index": 10,
       "name": "Re-entrancy",
       "address": "0x848fb2124071146990c7abE8511f851C7f527aF4",
-      "instance": "",
-      "completed": false,
+      "init_value": 1,
+      "instance": "0x14333ceef0193f184a022e804d7e544a85850990",
+      "completed": true,
       "description": ""
     },
     {
       "index": 11,
       "name": "Elevator",
       "address": "0xaB4F3F2644060b2D960b0d88F0a42d1D27484687",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -103,6 +115,7 @@
       "index": 12,
       "name": "Privacy",
       "address": "0x11343d543778213221516D004ED82C45C3c8788B",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -111,6 +124,7 @@
       "index": 13,
       "name": "Gatekeeper One",
       "address": "0x9b261b23cE149422DE75907C6ac0C30cEc4e652A",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": "Make it past the gatekeeper and register as an entrant to pass this level.\nThings that might help:\n\t- Remember what you've learned from the Telephone and Token levels.\n\t- You can learn more about the special function gasleft(), in Solidity's documentation."
@@ -119,6 +133,7 @@
       "index": 14,
       "name": "Gatekeeper Two",
       "address": "0xdCeA38B2ce1768E1F409B6C65344E81F16bEc38d",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -127,6 +142,7 @@
       "index": 15,
       "name": "Naught Coin",
       "address": "0x096bb5e93a204BfD701502EB6EF266a950217218",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -135,6 +151,7 @@
       "index": 16,
       "name": "Preservation",
       "address": "0x97E982a15FbB1C28F6B8ee971BEc15C78b3d263F",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -143,6 +160,7 @@
       "index": 17,
       "name": "Recovery",
       "address": "0x8d07AC34D8f73e2892496c15223297e5B22B3ABE",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -151,6 +169,7 @@
       "index": 18,
       "name": "MagicNumber",
       "address": "0x200d3d9Ac7bFd556057224e7aEB4161fED5608D0",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -159,6 +178,7 @@
       "index": 19,
       "name": "Alien Codex",
       "address": "0xda5b3Fb76C78b6EdEE6BE8F11a1c31EcfB02b272",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -167,6 +187,7 @@
       "index": 20,
       "name": "Denial",
       "address": "0xcE1BB92eeb71AF5Fec09D38B0c854d55285f6e04",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -175,6 +196,7 @@
       "index": 21,
       "name": "Shop",
       "address": "0xBE732789f2963E0522719F2D3fB55E6bfe07e92e",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -183,6 +205,7 @@
       "index": 22,
       "name": "Dex",
       "address": "0x0b0276F85EF92432fBd6529E169D9dE4aD337b1F",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""
@@ -191,6 +214,7 @@
       "index": 23,
       "name": "Dex Two",
       "address": "0xd2BA82c4777a8d619144d32a2314ee620BC9E09c",
+      "init_value": 0,
       "instance": "",
       "completed": false,
       "description": ""

@@ -7,3 +7,5 @@ pub mod solution05;
 pub mod solution06;
 pub mod solution07;
 pub mod solution08;
+pub mod solution09;
+pub mod solution10;

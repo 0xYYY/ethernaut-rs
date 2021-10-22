@@ -7,6 +7,7 @@ use crate::types::*;
 use clap::{App, Arg};
 use ethers::prelude::*;
 use ethers_core::types::Address;
+use ethers_core::utils::WEI_IN_ETHER;
 use serde_json;
 use std::error::Error;
 use std::fs;
@@ -92,6 +93,7 @@ async fn new(
     let receipt = contract
         .create_level_instance(level.address.parse()?)
         .legacy()
+        .value(U256::from(level.init_value) * WEI_IN_ETHER)
         .send()
         .await?
         .await?
@@ -252,6 +254,8 @@ async fn main() -> Result<(), Box<dyn Error>> {
                     6 => solution06::solve(level, &environment_config).await?,
                     7 => solution07::solve(level, &environment_config).await?,
                     8 => solution08::solve(level, &environment_config).await?,
+                    9 => solution09::solve(level, &environment_config).await?,
+                    10 => solution10::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {

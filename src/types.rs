@@ -11,6 +11,8 @@ pub struct Level {
     pub index: usize,
     pub name: String,
     pub address: String,
+    #[serde(default)]
+    pub init_value: u64,
     pub instance: String,
     pub completed: bool,
     pub description: String,
