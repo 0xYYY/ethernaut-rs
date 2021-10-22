@@ -63,16 +63,16 @@
       "index": 7,
       "name": "Force",
       "address": "0x22699e6AdD7159C3C385bf4d7e1C647ddB3a99ea",
-      "instance": "",
-      "completed": false,
+      "instance": "0x269e881e83b72a40fbb2f2e14460f4b812bd9e69",
+      "completed": true,
       "description": ""
     },
     {
       "index": 8,
       "name": "Vault",
       "address": "0xf94b476063B6379A3c8b6C836efB8B3e10eDe188",
-      "instance": "",
-      "completed": false,
+      "instance": "0x27b15bff660e6e18487d749fca4ec5f928784722",
+      "completed": true,
       "description": ""
     },
     {
