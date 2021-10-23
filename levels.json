@@ -107,8 +107,8 @@
       "name": "Elevator",
       "address": "0xaB4F3F2644060b2D960b0d88F0a42d1D27484687",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0xb58d0c2e8f32b2526bf89b2c2d600612ca45ee9e",
+      "completed": true,
       "description": ""
     },
     {
