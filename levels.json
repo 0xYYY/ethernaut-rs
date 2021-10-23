@@ -116,8 +116,8 @@
       "name": "Privacy",
       "address": "0x11343d543778213221516D004ED82C45C3c8788B",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0xe5b4942076310a0e4d85b0dab40a19168fb5883e",
+      "completed": true,
       "description": ""
     },
     {
