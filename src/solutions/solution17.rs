@@ -19,14 +19,18 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
         config.network.rpc.clone(),
     )?);
 
-    // input bytes are RLP encoded
+    let level_address = level.instance.parse::<Address>()?;
+    let nonce = client.get_transaction_count(level_address, None).await?;
+    println!("nonce: {}", nonce);
+
+    // Calculate token contract address, keccak256 of RLP encoded [deployer address, deployer nonce]
+    // Generate RLP encoded input bytes
     let mut input_bytes = vec![0xd6, 0x94];
-    input_bytes.append(&mut Vec::from(
-        level.instance.parse::<Address>()?.as_bytes(),
-    ));
-    input_bytes.push(1);
+    input_bytes.append(&mut Vec::from(level_address.as_bytes()));
+    input_bytes.push(nonce.as_usize() as u8 - 1);
     let token_address = H160::from(H256::from(ethers::utils::keccak256(input_bytes)));
     println!("token address: {:?}", token_address);
+
     let contract = LevelContract::new(token_address, client.clone());
     let receipt = contract
         .destroy(client.default_sender().unwrap())
