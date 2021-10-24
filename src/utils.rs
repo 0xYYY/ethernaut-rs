@@ -1,3 +1,4 @@
+use ethers::prelude::*;
 use ethers_middleware::signer::SignerMiddleware;
 use ethers_providers::{Http, Middleware, Provider};
 use ethers_signers::{coins_bip39::English, MnemonicBuilder, Signer};
@@ -20,4 +21,10 @@ pub fn create_signer_middleware(
     let client = SignerMiddleware::new(provider, wallet);
 
     Ok(client)
+}
+
+pub fn address_to_uint256(addr: Address) -> U256 {
+    let mut vec = vec![0u8; 12];
+    vec.append(&mut Vec::from(addr.to_fixed_bytes()));
+    return U256::from(vec.as_slice());
 }

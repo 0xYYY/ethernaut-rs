@@ -152,8 +152,8 @@
       "name": "Preservation",
       "address": "0x97E982a15FbB1C28F6B8ee971BEc15C78b3d263F",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0x0f24382fd8c7628dc206dfd0bf8dd911460daa2b",
+      "completed": true,
       "description": ""
     },
     {
@@ -161,8 +161,8 @@
       "name": "Recovery",
       "address": "0x8d07AC34D8f73e2892496c15223297e5B22B3ABE",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0x96decbcca563a4bc966d9550a3cf2f57668c842d",
+      "completed": true,
       "description": ""
     },
     {
