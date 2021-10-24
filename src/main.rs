@@ -107,8 +107,8 @@ async fn new(
     let event: (Address, Address) = contract
         .decode_event(
             "LevelInstanceCreatedLog",
-            receipt.logs[0].topics.clone(),
-            receipt.logs[0].data.clone(),
+            receipt.logs.last().unwrap().topics.clone(),
+            receipt.logs.last().unwrap().data.clone(),
         )
         .unwrap();
 
@@ -259,6 +259,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                     11 => solution11::solve(level, &environment_config).await?,
                     12 => solution12::solve(level, &environment_config).await?,
                     14 => solution14::solve(level, &environment_config).await?,
+                    15 => solution15::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
