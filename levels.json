@@ -187,9 +187,9 @@
       "index": 20,
       "name": "Denial",
       "address": "0xcE1BB92eeb71AF5Fec09D38B0c854d55285f6e04",
-      "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "init_value": 1,
+      "instance": "0x28a7a51fdd7c0c271ad6cefb775ddbc371be1ce0",
+      "completed": true,
       "description": ""
     },
     {
@@ -197,7 +197,7 @@
       "name": "Shop",
       "address": "0xBE732789f2963E0522719F2D3fB55E6bfe07e92e",
       "init_value": 0,
-      "instance": "",
+      "instance": "0xe67ea825e58453fe721902e96667fe210c0c9594",
       "completed": false,
       "description": ""
     },

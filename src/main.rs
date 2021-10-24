@@ -134,6 +134,7 @@ async fn submit(
     let receipt = contract
         .submit_level_instance(level.instance.parse()?)
         .legacy()
+        .gas(1_000_000)
         .send()
         .await?
         .await?
@@ -262,6 +263,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                     15 => solution15::solve(level, &environment_config).await?,
                     16 => solution16::solve(level, &environment_config).await?,
                     17 => solution17::solve(level, &environment_config).await?,
+                    20 => solution20::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
