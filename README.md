@@ -2,7 +2,7 @@
 [Ethernaut](https://ethernaut.openzeppelin.com/) solution in Rust. With command line interface to
 interact with the game.
 
-(This is a personal project to learn Ethereum, Solidity, Rust, ethers-rs.)
+(This is a personal project for me to learn Ethereum, Solidity, Rust, ethers-rs, etc.)
 
 
 ## Command Line Interface
