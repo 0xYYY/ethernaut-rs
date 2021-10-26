@@ -179,8 +179,8 @@
       "name": "Alien Codex",
       "address": "0xda5b3Fb76C78b6EdEE6BE8F11a1c31EcfB02b272",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0xcdb384d472126c94ca85156337e09d465aa3529b",
+      "completed": true,
       "description": ""
     },
     {
