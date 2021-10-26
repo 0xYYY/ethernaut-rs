@@ -218,6 +218,24 @@
       "instance": "0x4c97400326d2c8ed474f55e0ab963a0c79c74116",
       "completed": true,
       "description": ""
+    },
+    {
+      "index": 24,
+      "name": "Puzzle wallet",
+      "address": "0x440BCEA590A77445C24Ff623113978449351feB1",
+      "init_value": 1,
+      "instance": "0x14ae7aff9a25312fd400fb27a162a8305dc9e717",
+      "completed": true,
+      "description": ""
+    },
+    {
+      "index": 25,
+      "name": "Motorbike",
+      "address": "0x78e23A3881e385465F19c1a03E2F9fFEBdAD6045",
+      "init_value": 0,
+      "instance": "",
+      "completed": false,
+      "description": ""
     }
   ]
 }

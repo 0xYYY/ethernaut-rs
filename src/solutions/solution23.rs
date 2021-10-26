@@ -26,12 +26,12 @@ abigen!(
 struct ConstructorArguments {
     name: Token,
     symbol: Token,
-    initialSupply: Token,
+    initial_supply: Token,
 }
 
 impl Tokenize for ConstructorArguments {
     fn into_tokens(self) -> Vec<Token> {
-        return vec![self.name, self.symbol, self.initialSupply];
+        return vec![self.name, self.symbol, self.initial_supply];
     }
 }
 
@@ -56,7 +56,7 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
         .deploy(ConstructorArguments {
             name: Token::String(String::from("Token 3")),
             symbol: Token::String(String::from("TOKEN3")),
-            initialSupply: Token::Uint(U256::from_dec_str("4")?),
+            initial_supply: Token::Uint(U256::from_dec_str("4")?),
         })?
         .legacy()
         .send()
