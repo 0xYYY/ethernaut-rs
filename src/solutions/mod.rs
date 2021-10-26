@@ -18,3 +18,4 @@ pub mod solution17;
 pub mod solution19;
 pub mod solution20;
 pub mod solution21;
+pub mod solution22;

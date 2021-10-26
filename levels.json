@@ -206,8 +206,8 @@
       "name": "Dex",
       "address": "0x0b0276F85EF92432fBd6529E169D9dE4aD337b1F",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0x832f4dfdbbddef877aff36f402786a783af5110c",
+      "completed": true,
       "description": ""
     },
     {
