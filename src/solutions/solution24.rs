@@ -86,7 +86,8 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
     );
 
     // Use `multicall` to call `deposit` once, then call another `multicall` to call `deposit` the
-    // second time. This way, we can get pass the "Protect(ion) against reusing msg.value".
+    // second time. This way, we can get pass the "Protect(ion) against reusing msg.value" and set
+    // our balance in the contract to 2 while only sending 1 Ether.
     let receipt = level_contract
         .multicall(vec![deposit_sig.to_vec(), calldata.to_vec()])
         .legacy()
