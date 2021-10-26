@@ -267,6 +267,7 @@ async fn main() -> Result<(), Box<dyn Error>> {
                     20 => solution20::solve(level, &environment_config).await?,
                     21 => solution21::solve(level, &environment_config).await?,
                     22 => solution22::solve(level, &environment_config).await?,
+                    23 => solution23::solve(level, &environment_config).await?,
                     _ => {}
                 },
                 "submit" => {
