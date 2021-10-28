@@ -233,8 +233,8 @@
       "name": "Motorbike",
       "address": "0x78e23A3881e385465F19c1a03E2F9fFEBdAD6045",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0xdf873942d8191cb35157f1a30d86cfe43d259a3f",
+      "completed": true,
       "description": ""
     }
   ]
