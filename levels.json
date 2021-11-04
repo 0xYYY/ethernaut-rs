@@ -125,8 +125,8 @@
       "name": "Gatekeeper One",
       "address": "0x9b261b23cE149422DE75907C6ac0C30cEc4e652A",
       "init_value": 0,
-      "instance": "0xaf07d0498f91aa59a16e4f0b8bdf2bb941f7ca9f",
-      "completed": false,
+      "instance": "0x5f645ef8c007c7ae3f83b4ac4243177eb6c98485",
+      "completed": true,
       "description": "Make it past the gatekeeper and register as an entrant to pass this level.\nThings that might help:\n\t- Remember what you've learned from the Telephone and Token levels.\n\t- You can learn more about the special function gasleft(), in Solidity's documentation."
     },
     {
