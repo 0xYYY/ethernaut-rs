@@ -170,8 +170,8 @@
       "name": "MagicNumber",
       "address": "0x200d3d9Ac7bFd556057224e7aEB4161fED5608D0",
       "init_value": 0,
-      "instance": "",
-      "completed": false,
+      "instance": "0x6b17ef63325a08957d532c05070f0713580f1f10",
+      "completed": true,
       "description": ""
     },
     {
