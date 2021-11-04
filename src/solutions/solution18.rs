@@ -19,6 +19,11 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
         config.network.rpc.clone(),
     )?);
 
+    /* EVM opcode resource:
+     * https://blog.openzeppelin.com/deconstructing-a-solidity-contract-part-i-introduction-832efd2d7737/
+     * https://ethervm.io/
+     */
+
     /*
      * // Part 1: deployment code
      * [PUSH1]    0x60 0x0A (runtime code length, in bytes)
