@@ -19,7 +19,7 @@ SUBCOMMANDS:
     help      Print this message or the help of the given subcommand(s)
     new       Create a new instance of a level
     info      Print level info
-    solve     Run solution
+    readmesolve     Run solution
     status    Print status of each level
     submit    Submit to check whether the level is solved
 ```
@@ -42,7 +42,7 @@ the level is completed.
 - [ ] Get level info from Ethernaut [repo](https://github.com/OpenZeppelin/ethernaut) instead of
 copying from website.
 - [ ] Add testing with [dapptools-rs](https://github.com/gakonst/dapptools-rs) and subcommand `test`.
-- [ ] Finish solutions.
+- [x] Finish solutions.
 - [ ] Cleanup code: remove duplication, use OOP, etc.
 
 ## Related Repos
