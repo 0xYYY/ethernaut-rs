@@ -197,8 +197,8 @@
       "name": "Shop",
       "address": "0xBE732789f2963E0522719F2D3fB55E6bfe07e92e",
       "init_value": 0,
-      "instance": "0x87543c600d70cf2d37c768f2dec9291be243e803",
-      "completed": false,
+      "instance": "0xad9d669fb692d50bcb1f8194124687bc48e64986",
+      "completed": true,
       "description": ""
     },
     {

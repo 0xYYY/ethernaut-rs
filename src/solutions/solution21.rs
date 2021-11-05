@@ -6,7 +6,7 @@ use std::error::Error;
 use std::sync::Arc;
 
 abigen!(
-    LevelContract,
+    SolutionContract,
     r#"[
         function buy() public
     ]"#,
@@ -34,8 +34,8 @@ pub async fn solve(level: &Level, config: &EnvironmentConfig) -> Result<(), Box<
     let solution_address = solution_contract.address();
     println!("Solution contract deployed at {}\n", solution_address);
 
-    let level_contract = LevelContract::new(level_address, client.clone());
-    let receipt = level_contract.buy().legacy().send().await?.await?;
+    let solution_contract = SolutionContract::new(solution_address, client.clone());
+    let receipt = solution_contract.buy().legacy().send().await?.await?;
     println!("buy():\n{}", serde_json::to_string_pretty(&receipt)?);
 
     Ok(())
